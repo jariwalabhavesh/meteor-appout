@@ -1,0 +1,75 @@
+<div class="row text-center">
+	<form class="form-horizontal" name="myForm">
+		<fieldset>
+			<!-- Form Name -->
+			<legend>
+				<br/>
+					<p>App Out Config</p>
+				<br/>
+			</legend>
+			
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-3 control-label" for="messageForForceUpdate">Force App Update Message</label>  
+				<div class="col-md-9">
+				<input id="messageForForceUpdate" ng-model="appOutConfig.messageForForceUpdate" name="messageForForceUpdate" type="text" placeholder="Message for forcing user to app update" class="form-control input-md" required>
+				
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-3 control-label" for="messageForUpdateAvailable">App Update Avilable Message</label>  
+				<div class="col-md-9">
+				<input id="messageForUpdateAvailable" ng-model="appOutConfig.messageForUpdateAvailable" name="messageForUpdateAvailable" type="text" placeholder="Message for new app update available" class="form-control input-md" required>
+				
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-3 control-label" for="linkiOS">iOS Link</label>  
+				<div class="col-md-9">
+				<input id="linkiOS" ng-model="appOutConfig.linkiOS" name="linkiOS" type="text" placeholder="Link to show on iOS devices" class="form-control input-md" required>
+				
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-3 control-label" for="linkAndroid">Android Link</label>  
+				<div class="col-md-9">
+				<input id="linkAndroid" ng-model="appOutConfig.linkAndroid" name="linkAndroid" type="text" placeholder="Link to show on Android devices" class="form-control input-md" required>
+				
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-3 control-label" for="currentAppVersion">Current App Vesion</label>  
+				<div class="col-md-4">
+				<input id="currentAppVersion" ng-model="appOutConfig.currentAppVersion" name="currentAppVersion" type="text" placeholder="Current App Vesion" class="form-control input-md" required>
+				
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-3 control-label" for="minAppVersion">Minimum App Version</label>  
+				<div class="col-md-4">
+				<input id="minAppVersion" ng-model="appOutConfig.minAppVersion" name="minAppVersion" type="text" placeholder="Minimum App Version" class="form-control input-md" required>
+				
+				</div>
+			</div>
+
+			<!-- Button -->
+			<div class="form-group">
+				<label class="col-md-3 control-label" for="saveButton"></label>
+				<div class="col-md-4">
+				<button id="saveButton" name="saveButton" ng-click="save()" class="btn btn-success">Save</button>
+				</div>
+			</div>
+
+		</fieldset>
+	</form>
+</div>
