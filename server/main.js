@@ -105,7 +105,7 @@ if(Meteor.isServer) {
 				}
 			}
 
-			console.log('[APP_OUT] [getAppSpecs] Hello World Metor Package. Args - ', currentAppVersion, ' User ID - ', Meteor.userId);
+			console.log('[APP_OUT] [getAppSpecs] Hello World Metor Package. Args - ', currentAppVersion, ' User ID - ', Meteor.userId());
 
 			// Check if object not found then create one
 			var configObject = AppOutConfig.findOne({
