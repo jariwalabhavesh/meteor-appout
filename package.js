@@ -13,7 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
 	api.versionsFrom('1.2.1');
 	// api.use('ecmascript');
-	api.use('angular');
+	// api.use('angular');
 	api.addFiles('appout.js');
 	api.addFiles('client/index.js', 'client');
 	api.addFiles('client/settings.controller.js', 'client');
