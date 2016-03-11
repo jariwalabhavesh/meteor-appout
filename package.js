@@ -17,7 +17,7 @@ Package.onUse(function(api) {
 	api.addFiles('appout.js');
 	api.addFiles('client/index.js', 'client');
 	api.addFiles('client/settings.controller.js', 'client');
-	api.addFiles('client/templates/settings.ng.html', 'client');
+	api.addAssets('client/templates/settings.ng.html', 'client');
 
 	api.export("SettingsController", "client")
 

@@ -19,8 +19,10 @@ Meteor.startup(function () {
 				name: AppOut.appOutConfigObject,
 				messageForForceUpdate: 'Hello, User',
 				messageForUpdateAvailable: 'Hello, User',
-				currentAppVersion: '1.0',
-				minAppVersion: '0.1',
+				androidCurrentAppVersion: '1.0',
+				iosCurrentAppVersion: '1.0',
+				androidMinAppVersion: '0.1',
+				iosMinAppVersion: '0.1',
 				linkAndroid: '',
 				linkiOS: '',
 			});
@@ -95,7 +97,7 @@ if(Meteor.isServer) {
 				linkiOS: link to show in iOS Device,
 			}
 		*/
-		getAppSpecs: function(currentAppVersion) {
+		getAppSpecs: function(currentAppVersion, platform) {
 
 			if(!currentAppVersion) {
 				console.log('One must provide the Current App Version to get correct response.');
@@ -121,6 +123,10 @@ if(Meteor.isServer) {
 				};
 			}
 
+			// According platform we have to check app version
+			var minAppVersion = platform.toLowerCase() == 'android' ? configObject.androidMinAppVersion : configObject.iosMinAppVersion;
+			var currentLiveAppVersion = platform.toLowerCase() == 'android' ? configObject.androidCurrentAppVersion : configObject.iosCurrentAppVersion;
+
 			// Now, config object retrived & sending the details
 			var returnObject = {
 				status: true,
@@ -129,7 +135,7 @@ if(Meteor.isServer) {
 			};
 	
 			// Check App versions now.
-			if(versionCompare(configObject.minAppVersion, currentAppVersion) == 1) {
+			if(versionCompare(minAppVersion, currentAppVersion) == 1) {
 				returnObject.appUpdateRequired = true;
 				returnObject.message = configObject.messageForForceUpdate,
 				console.log('[APP_OUT] [getAppSpecs] App Version is out of date');
@@ -138,7 +144,7 @@ if(Meteor.isServer) {
 			console.log('[APP_OUT] [getAppSpecs] MiniMum version is yet lower than currentAppVersion, so allowing User to Use App');
 
 
-			if(versionCompare(configObject.currentAppVersion, currentAppVersion) == 1) {
+			if(versionCompare(currentLiveAppVersion, currentAppVersion) == 1) {
 				returnObject.appUpdateAvailable = true;
 				returnObject.message = configObject.messageForUpdateAvailable,
 				console.log('[APP_OUT] [getAppSpecs] New App Update available.');

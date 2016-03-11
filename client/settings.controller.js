@@ -28,12 +28,14 @@ angular.module("app-version-limit")
 					_id: $scope.appOutConfig._id
 				}, {
 					$set: {
-						currentAppVersion: $scope.appOutConfig.currentAppVersion,
+						androidCurrentAppVersion: $scope.appOutConfig.androidCurrentAppVersion,
+						iosCurrentAppVersion: $scope.appOutConfig.iosCurrentAppVersion,
 						linkAndroid: $scope.appOutConfig.linkAndroid,
 						linkiOS: $scope.appOutConfig.linkiOS,
 						messageForForceUpdate: $scope.appOutConfig.messageForForceUpdate,
 						messageForUpdateAvailable: $scope.appOutConfig.messageForUpdateAvailable,
-						minAppVersion: $scope.appOutConfig.minAppVersion
+						androidMinAppVersion: $scope.appOutConfig.androidMinAppVersion,
+						iosMinAppVersion: $scope.appOutConfig.iosMinAppVersion
 					}
 				}, function(error, docsUpdated) {
 					if(docsUpdated == 1) {
