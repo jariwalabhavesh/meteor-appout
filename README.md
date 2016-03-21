@@ -6,10 +6,10 @@
 * 0.0.1
 
 ### How do I get set up? ###
-
-* git clone https://vintesh@bitbucket.org/JumpByte/appout.git
-* move that folder to packages folder of the project
 * meteor add jumpbyte:appout
+
+### How to Integrate/Use?
+* Updating...
 
 ### Who do I talk to? ###
 nachiket@jumpbyte.com
