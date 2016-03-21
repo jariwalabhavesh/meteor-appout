@@ -2,9 +2,9 @@ Package.describe({
 	name: 'jumpbyte:appout',
 	version: '0.0.1',
 	// Brief, one-line summary of the package.
-	summary: 'For App Version Management.',
+	summary: 'Simple App Version Managemener for mobile Apps.',
 	// URL to the Git repository containing the source code for this package.
-	git: 'http://github.com/jumpbytehq',
+	git: 'https://github.com/jumpbytehq/meteor-appout.git',
 	// By default, Meteor will default to using README.md for documentation.
 	// To avoid submitting documentation, set this field to null.
 	documentation: 'README.md'
