@@ -12,12 +12,17 @@ Package.describe({
 
 Package.onUse(function(api) {
 	api.versionsFrom('1.1.0.2');
+	// api.versionsFrom('1.2.1');
 	// api.use('ecmascript');
 	// api.use('angular');
 	api.addFiles('appout.js');
 	api.addFiles('client/index.js', 'client');
 	api.addFiles('client/settings.controller.js', 'client');
-	api.addFiles('client/templates/settings.ng.html', 'client');
+	if (api.addAssets) {
+		api.addAssets('client/templates/settings.ng.html', 'client');
+	} else {
+		api.addFiles('client/templates/settings.ng.html', 'client');
+	}	
 
 	api.export("SettingsController", "client")
 
