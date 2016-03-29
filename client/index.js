@@ -3,13 +3,13 @@ if (Meteor.isClient) {
 	AppOutConfig = new Meteor.Collection("appOutConfig");
 
 	angular.module('app-version-limit',['angular-meteor','ui.router'])
-	.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider, AuthService) {
+	.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
 		console.log('Setting up the routes for App - Version - Limit.');
 		$stateProvider.state('appVersionLimit', {
 				url: '/appVersionLimit',
 				views:{
 					'container@': {
-						templateUrl: '/packages/jumpbyte:packagetest/client/templates/settings.ng.html',
+						templateUrl: '/packages/jumpbyte:appout/client/templates/settings.ng.html',
 						controller: 'SettingsController'
 					}
 				},

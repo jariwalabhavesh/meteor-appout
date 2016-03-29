@@ -12,36 +12,26 @@ angular.module("app-version-limit")
 				console.log('failed', err);
 			}
 		);*/
-		$scope.appOutConfig = AppOutConfig.findOne({
-			name: AppOutObjectName
-		});;
+		$meteor.call('getAppOutConfig').then(
+			function(result) {
+				$scope.appOutConfig = result;
+			}, function(error) {
+				console.log("[APP_OUT] Error while fetching the appOutConfig Object from Server - ", error);
+			}
+		);
 
 		$scope.save = function() {
 			if($scope.myForm.$valid) {
 				console.log('[APP_OUT] Saving App Config Object - ', $scope.appOutConfig);
 
-				// Saving App Config Object
-				// var object = AppOutConfig.findOne({
-				// 	name: AppOutObjectName
-				// });
-				AppOutConfig.update({
-					_id: $scope.appOutConfig._id
-				}, {
-					$set: {
-						androidCurrentAppVersion: $scope.appOutConfig.androidCurrentAppVersion,
-						iosCurrentAppVersion: $scope.appOutConfig.iosCurrentAppVersion,
-						linkAndroid: $scope.appOutConfig.linkAndroid,
-						linkiOS: $scope.appOutConfig.linkiOS,
-						messageForForceUpdate: $scope.appOutConfig.messageForForceUpdate,
-						messageForUpdateAvailable: $scope.appOutConfig.messageForUpdateAvailable,
-						androidMinAppVersion: $scope.appOutConfig.androidMinAppVersion,
-						iosMinAppVersion: $scope.appOutConfig.iosMinAppVersion
+				$meteor.call('updateAppOutConfig', $scope.newNotification).then(
+					function(result) {
+						alert('Config updated correctly.');          
+						console.log("[APP_OUT] Updated Successfully: ", result);
+					}, function(error) {
+						console.log("[APP_OUT] Error while updating Configs:", error);
 					}
-				}, function(error, docsUpdated) {
-					if(docsUpdated == 1) {
-						alert('Config updated correctly.');
-					}
-				});
+				);
 			}
 		}
 	}
