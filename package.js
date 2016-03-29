@@ -1,6 +1,6 @@
 Package.describe({
 	name: 'jumpbyte:appout',
-	version: '0.0.1',
+	version: '0.0.2',
 	// Brief, one-line summary of the package.
 	summary: 'Simple App Version Managemener for mobile Apps.',
 	// URL to the Git repository containing the source code for this package.
