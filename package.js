@@ -29,10 +29,3 @@ Package.onUse(function(api) {
 	// Server Code
 	api.addFiles('server/main.js', 'server');
 });
-
-Package.onTest(function(api) {
-	// api.use('ecmascript');
-	api.use('tinytest');
-	api.use('jumpbyte:appout');
-	api.addFiles('appout-tests.js');
-});
