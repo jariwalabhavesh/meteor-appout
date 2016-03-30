@@ -24,7 +24,7 @@ angular.module("app-version-limit")
 			if($scope.myForm.$valid) {
 				console.log('[APP_OUT] Saving App Config Object - ', $scope.appOutConfig);
 
-				$meteor.call('updateAppOutConfig', $scope.newNotification).then(
+				$meteor.call('updateAppOutConfig', $scope.appOutConfig).then(
 					function(result) {
 						alert('Config updated correctly.');          
 						console.log("[APP_OUT] Updated Successfully: ", result);
